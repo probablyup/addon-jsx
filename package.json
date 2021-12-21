@@ -2,7 +2,7 @@
   "name": "@styled/storybook-addon-jsx",
   "version": "7.4.0",
   "description": "Forked from storybook-addon-jsx to add markdown support to the prop and component tooltips.",
-  "repository": "probablyup/addon-jsx",
+  "repository": "styled-components/addon-jsx",
   "license": "MIT",
   "author": "Andrew Lisowski <lisowski54@gamil.com>",
   "contributors": [
