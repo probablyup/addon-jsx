@@ -13,9 +13,7 @@
     "build:dev": "babel -w src --out-dir lib --ignore spec.js,test.js --extensions .ts --extensions .js --extensions .tsx",
     "build:types": "tsc -p tsconfig.json",
     "lint": "eslint --cache src --ext ts --ext tsx",
-    "netlify": "build-storybook -c ./example/.storybook",
     "prepare": "yarn build",
-    "release": "auto shipit",
     "storybook": "start-storybook -p 9009 -c ./example/.storybook",
     "test": "yarn test:all",
     "test:all": "jest src",
@@ -46,8 +44,6 @@
     "storybook-pretty-props": "^1.0.3"
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^9.34.1",
-    "@auto-it/first-time-contributor": "^9.34.1",
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.0",
@@ -66,7 +62,6 @@
     "@types/react": "^16.8.8",
     "@types/storybook__react": "^4.0.1",
     "all-contributors-cli": "^6.14.2",
-    "auto": "^9.34.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.6",
@@ -91,15 +86,7 @@
     "@storybook/components": ">= 5.x",
     "@storybook/core-events": ">= 5.x",
     "@storybook/theming": ">= 5.x",
-    "react": "^16.2.0 || ^17.0.0",
-    "react-dom": "^16.2.0 || ^17.0.0"
-  },
-  "auto": {
-    "plugins": [
-      "npm",
-      "released",
-      "first-time-contributor",
-      "all-contributors"
-    ]
+    "react": ">= 16.2.0",
+    "react-dom": ">= 16.2.0"
   }
 }
