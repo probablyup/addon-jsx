@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle, @typescript-eslint/no-explicit-any */
-
 import {
   addons,
   ClientStoryApi,
@@ -199,6 +197,9 @@ export const jsxDecorator = makeDecorator({
 
 export default {
   addWithJSX(this: StoryApi, kind: string, storyFn: StoryFn<any>) {
-    return this.add(kind, context => jsxDecorator(storyFn, context));
+    return this.add(
+      kind,
+      (context: any) => jsxDecorator(storyFn, context) as StoryFn
+    );
   }
 };

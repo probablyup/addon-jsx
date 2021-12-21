@@ -1,6 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 /** A simple component with _markdown_ */
 export const Simple = ({ children }) => (
@@ -16,11 +15,11 @@ Simple.propTypes = {
   /** A test string */
   test: PropTypes.string,
   /** A test boolean with _markdown_ */
-  value: PropTypes.bool
+  value: PropTypes.bool,
 };
 
 Simple.defaultProps = {
-  value: false
+  value: false,
 };
 
 export default Simple;

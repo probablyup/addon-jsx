@@ -4,20 +4,16 @@ import { storiesOf } from '@storybook/react';
 import Simple from '../components/simple';
 
 storiesOf('With Props', module)
-  .addWithJSX('No children - No options', () => <Simple />)
-  .addWithJSX(
-    'No children - Rename',
-    () => <Simple test="test" value={true} />,
-    {
-      displayName: 'Renamed'
-    }
-  )
-  .addWithJSX('With children - No options', () => (
+  .add('No children - No options', () => <Simple />)
+  .add('No children - Rename', () => <Simple test="test" value={true} />, {
+    displayName: 'Renamed',
+  })
+  .add('With children - No options', () => (
     <Simple test="test" value={true}>
       <span>World</span>
     </Simple>
   ))
-  .addWithJSX(
+  .add(
     'With children - Skip',
     () => (
       <Simple>
@@ -26,9 +22,9 @@ storiesOf('With Props', module)
         </Simple>
       </Simple>
     ),
-    { skip: 1 }
+    { jsx: { skip: 1 } }
   )
-  .addWithJSX(
+  .add(
     'With children - Skip and rename',
     () => (
       <Simple>
@@ -37,32 +33,36 @@ storiesOf('With Props', module)
         </Simple>
       </Simple>
     ),
-    { skip: 1, displayName: () => 'Renamed' }
+    { jsx: { skip: 1, displayName: () => 'Renamed' } }
   )
-  .addWithJSX(
+  .add(
     'With dangerouslySetInnerHTML - onBeforeRender',
     () => (
       <Simple>
         <Simple test="test" value={true}>
           <div
             dangerouslySetInnerHTML={{
-              __html: '<div>Inner HTML<ul><li>1</li><li>2</li></ul></div>'
+              __html: '<div>Inner HTML<ul><li>1</li><li>2</li></ul></div>',
             }}
           />
         </Simple>
       </Simple>
     ),
     {
-      skip: 1,
-      onBeforeRender: domString => {
-        if (domString.search('dangerouslySetInnerHTML') < 0) {
-          return '';
-        }
-        try {
-          domString = /(dangerouslySetInnerHTML={{)([^}}]*)/.exec(domString)[2];
-          domString = /(')([^']*)/.exec(domString)[2];
-        } catch (err) {}
-        return domString;
-      }
+      jsx: {
+        skip: 1,
+        onBeforeRender: (domString) => {
+          if (domString.search('dangerouslySetInnerHTML') < 0) {
+            return '';
+          }
+          try {
+            domString = /(dangerouslySetInnerHTML={{)([^}}]*)/.exec(
+              domString
+            )[2];
+            domString = /(')([^']*)/.exec(domString)[2];
+          } catch (err) {}
+          return domString;
+        },
+      },
     }
   );

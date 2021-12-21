@@ -9,33 +9,33 @@ const Simple = ({ children }) => (
 );
 
 storiesOf('Simple Test', module)
-  .addWithJSX('No children - No options', () => <Simple />)
-  .addWithJSX('No children - Rename', () => <Simple />, {
-    displayName: 'Renamed'
+  .add('No children - No options', () => <Simple />)
+  .add('No children - Rename', () => <Simple />, {
+    jsx: { displayName: 'Renamed' },
   })
-  .addWithJSX('With children - No options', () => (
+  .add('With children - No options', () => (
     <Simple>
       <span>World</span>
     </Simple>
   ))
-  .addWithJSX(
+  .add(
     'With children - Skip',
     () => (
       <Simple>
         <span>World</span>
       </Simple>
     ),
-    { skip: 1 }
+    { jsx: { skip: 1 } }
   )
-  .addWithJSX(
+  .add(
     'With children - Skip and rename',
     () => (
       <Simple>
         <span>World</span>
       </Simple>
     ),
-    { skip: 1, displayName: 'Renamed' }
+    { jsx: { skip: 1, displayName: 'Renamed' } }
   )
-  .addWithJSX('Data strings', () => (
+  .add('Data strings', () => (
     <div data={`{"bar"}`} data-baz={`{"baz"}`} data-bat={`{"bat"}`} />
   ));

@@ -12,7 +12,7 @@ class Simple extends React.Component {
     );
   }
 }
-const withErrors = BaseComponent => props => {
+const withErrors = (BaseComponent) => (props) => {
   const style = { color: 'red' };
   return <BaseComponent {...props} style={style} />;
 };
@@ -22,12 +22,12 @@ const SimpleWithErrors = withErrors(Simple);
 storiesOf('Function as a children', module)
   .addWithJSX('No options', () => <Simple>{() => <span>World</span>}</Simple>)
   .addWithJSX('Skip', () => <Simple>{() => <span>World</span>}</Simple>, {
-    skip: 1
+    jsx: { skip: 1 },
   })
   .addWithJSX(
     'Skip and Rename',
     () => <Simple>{() => <span>World</span>}</Simple>,
-    { skip: 1, displayName: () => 'Renamed' }
+    { jsx: { skip: 1, displayName: () => 'Renamed' } }
   )
   .addWithJSX('Deep function - No options', () => (
     <Simple>
@@ -49,5 +49,5 @@ storiesOf('Function as a children', module)
         )}
       </Simple>
     ),
-    { skip: 2 }
+    { jsx: { skip: 2 } }
   );

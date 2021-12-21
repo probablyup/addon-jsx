@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 const Component = () => <div id="from-function" />;
-const Simple = props => (
+const Simple = (props) => (
   <div>
     <span>Hello</span>
     {props.children}
@@ -10,7 +10,7 @@ const Simple = props => (
 );
 
 storiesOf('Children Array', module)
-  .addWithJSX(
+  .add(
     'Simple Array',
     () => (
       <div>
@@ -18,9 +18,9 @@ storiesOf('Children Array', module)
         <div />
       </div>
     ),
-    { skip: 1 }
+    { jsx: { skip: 1 } }
   )
-  .addWithJSX(
+  .add(
     'Array with function',
     () => (
       <div>
@@ -29,9 +29,9 @@ storiesOf('Children Array', module)
         {Component()}
       </div>
     ),
-    { skip: 1 }
+    { jsx: { skip: 1 } }
   )
-  .addWithJSX(
+  .add(
     'Array with nested component',
     () => (
       <div>
@@ -41,5 +41,5 @@ storiesOf('Children Array', module)
         </Simple>
       </div>
     ),
-    { skip: 1 }
+    { jsx: { skip: 1 } }
   );

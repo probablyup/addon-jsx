@@ -15,7 +15,7 @@ const Deep = ({ children }) => (
 );
 
 storiesOf('Deep Test', module)
-  .addWithJSX('No children - No options', () => (
+  .add('No children - No options', () => (
     <div>
       <div>
         <ul>
@@ -30,7 +30,7 @@ storiesOf('Deep Test', module)
       </div>
     </div>
   ))
-  .addWithJSX(
+  .add(
     'No children - Rename',
     () => (
       <div>
@@ -45,10 +45,10 @@ storiesOf('Deep Test', module)
       </div>
     ),
     {
-      displayName: () => 'Renamed'
+      jsx: { displayName: () => 'Renamed' },
     }
   )
-  .addWithJSX('With children - No options', () => (
+  .add('With children - No options', () => (
     <div>
       <div>
         <div>
@@ -60,7 +60,7 @@ storiesOf('Deep Test', module)
       </div>
     </div>
   ))
-  .addWithJSX(
+  .add(
     'With children - Skip',
     () => (
       <div>
@@ -74,9 +74,9 @@ storiesOf('Deep Test', module)
         </div>
       </div>
     ),
-    { skip: 1 }
+    { jsx: { skip: 1 } }
   )
-  .addWithJSX(
+  .add(
     'With children - Skip and rename',
     () => (
       <div>
@@ -93,5 +93,5 @@ storiesOf('Deep Test', module)
         </div>
       </div>
     ),
-    { skip: 1, displayName: () => 'Renamed' }
+    { jsx: { skip: 1, displayName: () => 'Renamed' } }
   );
