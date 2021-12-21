@@ -15,12 +15,9 @@
     "build-storybook": "build-storybook -c ./example/.storybook",
     "build:dev": "babel -w src --out-dir lib --ignore spec.js,test.js --extensions .ts --extensions .js --extensions .tsx",
     "build:types": "tsc -p tsconfig.json",
-    "lint": "eslint --cache src --ext ts --ext tsx",
     "prepare": "yarn build",
-    "storybook": "start-storybook -p 9009 -c ./example/.storybook",
-    "test": "yarn test:all",
-    "test:all": "jest src",
-    "test:dev": "jest src --watch"
+    "storybook": "start-storybook -c ./example/.storybook",
+    "test": "jest src"
   },
   "husky": {
     "hooks": {
@@ -52,7 +49,6 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
-    "@design-systems/eslint-config": "^1.4.15",
     "@storybook/addon-options": "^5.0.3",
     "@storybook/addon-storyshots": "^5.0.3",
     "@storybook/addons": "^5.2.5",
@@ -64,12 +60,10 @@
     "@types/js-beautify": "^1.8.0",
     "@types/react": "^16.8.8",
     "@types/storybook__react": "^4.0.1",
-    "all-contributors-cli": "^6.14.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.6",
-    "eslint": "^6.8.0",
-    "husky": "^3.0.9",
+    "husky-v4": "^4.3.8",
     "jest": "^24.5.0",
     "lint-staged": "^9.4.2",
     "prettier": "^1.15.2",
