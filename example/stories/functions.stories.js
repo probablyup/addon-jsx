@@ -20,16 +20,14 @@ const withErrors = (BaseComponent) => (props) => {
 const SimpleWithErrors = withErrors(Simple);
 
 storiesOf('Function as a children', module)
-  .addWithJSX('No options', () => <Simple>{() => <span>World</span>}</Simple>)
-  .addWithJSX('Skip', () => <Simple>{() => <span>World</span>}</Simple>, {
+  .add('No options', () => <Simple>{() => <span>World</span>}</Simple>)
+  .add('Skip', () => <Simple>{() => <span>World</span>}</Simple>, {
     jsx: { skip: 1 },
   })
-  .addWithJSX(
-    'Skip and Rename',
-    () => <Simple>{() => <span>World</span>}</Simple>,
-    { jsx: { skip: 1, displayName: () => 'Renamed' } }
-  )
-  .addWithJSX('Deep function - No options', () => (
+  .add('Skip and Rename', () => <Simple>{() => <span>World</span>}</Simple>, {
+    jsx: { skip: 1, displayName: () => 'Renamed' },
+  })
+  .add('Deep function - No options', () => (
     <Simple>
       {() => (
         <SimpleWithErrors>
@@ -38,7 +36,7 @@ storiesOf('Function as a children', module)
       )}
     </Simple>
   ))
-  .addWithJSX(
+  .add(
     'Deep function - Skip',
     () => (
       <Simple>
