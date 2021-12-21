@@ -1,12 +1,11 @@
 <p align="center">
   <img width=100 src="storybook-jsx.png">
   <br>
-  <h1 style="text-align:center;">Storybook-addon-jsx</h1>
+  <h1 style="text-align:center;">@styled/storybook-addon-jsx</h1>
 </p>
 
-[![Build Status](https://travis-ci.org/Kilix/storybook-addon-jsx.svg?branch=master)](https://travis-ci.org/Kilix/storybook-addon-jsx)
-[![Total Download](https://img.shields.io/npm/dt/storybook-addon-jsx.svg)](https://www.npmjs.com/package/storybook-addon-jsx)
-[![Current Version](https://img.shields.io/npm/v/storybook-addon-jsx.svg)](https://www.npmjs.com/package/storybook-addon-jsx)
+[![Total Download](https://img.shields.io/npm/dt/@styled/storybook-addon-jsx.svg)](https://www.npmjs.com/package/@styled/storybook-addon-jsx)
+[![Current Version](https://img.shields.io/npm/v/@styled/storybook-addon-jsx.svg)](https://www.npmjs.com/package/@styled/storybook-addon-jsx)
 
 This Storybook addon shows you the JSX of the story.
 This preview works for Vue components as well.
@@ -21,9 +20,9 @@ The outputted JSX will reflect any changes made to the storybok by knobs or cont
 First install the addon from `npm`:
 
 ```sh
-npm i --save-dev storybook-addon-jsx
+npm i --save-dev @styled/storybook-addon-jsx
 # or
-yarn add --dev storybook-addon-jsx
+yarn add --dev @styled/storybook-addon-jsx
 ```
 
 ### Configuration
@@ -32,14 +31,14 @@ For the latest storybook all you need to do is add the addon to your `.storybook
 
 ```js
 module.exports = {
-  addons: ['storybook-addon-jsx']
+  addons: ['@styled/storybook-addon-jsx']
 };
 ```
 
 If you are using storybook@5.x or lower you will need to add the following to `.storybook/addons.js`:
 
 ```js
-import 'storybook-addon-jsx/register';
+import '@styled/storybook-addon-jsx/register';
 ```
 
 ### Usage
@@ -49,7 +48,7 @@ Import it into your stories file and then use it when you write stories:
 ```js
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { jsxDecorator } from "storybook-addon-jsx";
+import { jsxDecorator } from "@styled/storybook-addon-jsx";
 
 import { TestComponent } from './TestComponent':
 
@@ -71,7 +70,7 @@ Or to configure it globally add the `jsxDecorator` to your `.storybook/preview.j
 
 ```js
 const { addDecorator } = require('@storybook/react');
-const { jsxDecorator } = require('storybook-addon-jsx');
+const { jsxDecorator } = require('@styled/storybook-addon-jsx');
 
 addDecorator(jsxDecorator);
 ```
@@ -84,7 +83,7 @@ You can also use this addon with `@storybook/vue`.
 
 ```js
 import { configure, addDecorator } from '@storybook/vue';
-import { jsxDecorator } from 'storybook-addon-jsx';
+import { jsxDecorator } from '@styled/storybook-addon-jsx';
 
 addDecorator(jsxDecorator);
 ```
@@ -190,7 +189,7 @@ addParameters({
 
 ## Function Props
 
-If you provide a funtion to one of your props `storybook-addon-jsx` will display that functions `toString` result.
+If you provide a funtion to one of your props `@styled/storybook-addon-jsx` will display that functions `toString` result.
 This is usaully very ugly.
 To override this include the following util function that will print an easiy to read string.
 
@@ -256,12 +255,12 @@ config.resolve.mainFields = ['source', 'module', 'main'];
 
 ## Testing with storyshots
 
-If you are using the `addWithJSX` method you will need to include `storybook-addon-jsx` in your test file.
+If you are using the `addWithJSX` method you will need to include `@styled/storybook-addon-jsx` in your test file.
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { setAddon } from '@storybook/react';
-import JSXAddon from 'storybook-addon-jsx';
+import JSXAddon from '@styled/storybook-addon-jsx';
 
 setAddon(JSXAddon);
 
@@ -327,6 +326,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

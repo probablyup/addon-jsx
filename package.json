@@ -5,6 +5,9 @@
   "repository": "probablyup/addon-jsx",
   "license": "MIT",
   "author": "Andrew Lisowski <lisowski54@gamil.com>",
+  "contributors": [
+    "Evan Jacobs <probablyup@gmail.com>"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "prebuild": "rimraf lib",
