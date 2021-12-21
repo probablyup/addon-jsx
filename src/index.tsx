@@ -11,7 +11,7 @@ import {
 import reactElementToJSXString, {
   Options
 } from '@styled/react-element-to-jsx-string';
-import { html as beautifyHTML } from 'js-beautify';
+import { html as beautifyHTML, HTMLBeautifyOptions } from 'js-beautify';
 import React from 'react';
 import { EVENTS } from './constants';
 import { ComponentMap } from './renderer';
