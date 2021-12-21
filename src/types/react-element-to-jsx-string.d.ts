@@ -1,4 +1,4 @@
-declare module 'react-element-to-jsx-string' {
+declare module '@styled/react-element-to-jsx-string' {
   export interface Options {
     showFunctions?: boolean;
     displayName?(): string;

@@ -1,17 +1,18 @@
 /* eslint-disable no-underscore-dangle, @typescript-eslint/no-explicit-any */
 
-import React from 'react';
 import {
   addons,
+  ClientStoryApi,
   makeDecorator,
-  StoryContext,
-  StoryFn,
   StoryApi,
-  ClientStoryApi
+  StoryContext,
+  StoryFn
 } from '@storybook/addons';
-import reactElementToJSXString, { Options } from 'react-element-to-jsx-string';
+import reactElementToJSXString, {
+  Options
+} from '@styled/react-element-to-jsx-string';
 import { html as beautifyHTML } from 'js-beautify';
-
+import React from 'react';
 import { EVENTS } from './constants';
 import { ComponentMap } from './renderer';
 
